@@ -1,11 +1,21 @@
+a {
+    text-decoration: none !important;
+}
+
 .mainContainer {
-    height: 10.542168674698795vh;
+    height: 10.742168674698795vh;
     width: 100%;
     background-color: #24252A;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #DEDFE4;
-
-    
 }
+
+.buttonsContainer {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+}
+
