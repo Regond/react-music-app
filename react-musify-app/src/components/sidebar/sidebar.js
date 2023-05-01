@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styles from './sidebar.module.css';
 import SidebarButton from './sidebarButton';
 import { MdSpaceDashboard } from "react-icons/md";
@@ -10,7 +11,9 @@ import { IoLibrary } from "react-icons/io5";
 export default function Sidebar() {
   return (
     <div className={styles.mainContainer}>
-        
+        <Link to='/' className={styles.Logo}>
+            <h1 className={styles.logoName}>Musify</h1>
+        </Link>
 
         <div className={styles.buttonsContainer}>
           <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />

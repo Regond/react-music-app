@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 a {
     text-decoration: none !important;
 }
@@ -19,3 +21,16 @@ a {
     justify-content: space-between;
 }
 
+.Logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoName {
+    font-family: 'Righteous', cursive;
+    color: #DEDFE4;
+    cursor: pointer;
+}
