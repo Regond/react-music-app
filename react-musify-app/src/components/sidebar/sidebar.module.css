@@ -10,7 +10,7 @@ a {
     background-color: #24252A;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     color: #DEDFE4;
 }
 
@@ -33,4 +33,23 @@ a {
     font-family: 'Righteous', cursive;
     color: #DEDFE4;
     cursor: pointer;
+}
+
+.userInfo {
+    height: 90%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profileImg {
+    width: 14%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.userName {
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
 }
