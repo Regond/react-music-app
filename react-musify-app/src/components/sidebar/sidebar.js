@@ -7,13 +7,27 @@ import { MdFavorite } from "react-icons/md";
 import { FaGripfire, FaPlay } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
-
+import apiClient from '../../spotify';
 export default function Sidebar() {
 
   const [image, setImage] = useState(
-    <FaUserAlt className={styles.profileImg} />
+    <FaUserAlt className={styles.profilePic} />
   );
   const [name, setName] = useState('Гість');
+
+  useEffect(() => {
+    apiClient.get("me").then(response => {
+      setName(response.data.display_name);
+      setImage(
+        <img 
+          src={response.data.images[0].url}
+          className={styles.profileImg}
+          alt={name}
+        />     
+        );
+    })
+  }, []) 
+
   return (
     <div className={styles.mainContainer}>
         <Link to='/' className={styles.Logo}>
