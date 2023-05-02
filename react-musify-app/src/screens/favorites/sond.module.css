@@ -1,0 +1,25 @@
+.song {
+    width: 90%;
+    height: 100px;
+    background-color: #cdced3;
+    border-radius: 10px;
+    box-shadow: 8px 5px 5px #a6a7ac;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    /* border: 5px dashed #a6a7ac; */
+    padding: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.songImage {
+    height: 80%;
+    border-radius: 10px;
+}
+
+.songInfo {
+    height: 80%;
+}
+.songTitle {
+    color: #24252A;
+}
