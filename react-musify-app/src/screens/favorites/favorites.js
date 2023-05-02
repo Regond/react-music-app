@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useEffect } from 'react';
 import APIKit from '../../spotify';
+import styles from './favorites.module.css'
 
 export default function Favorites() {
 
@@ -14,15 +15,17 @@ export default function Favorites() {
 
 
   return (
-    <div>
-
+    <div className={styles.main}>
       {tracks?.map((track) => (
-        <img 
-          src={track.track.album.images[0].url}
-          alt='asdas'
-          key={track.track.id}
-        />
-          
+        <div className={styles.song}> 
+
+        </div>
+        // <img 
+        //   src={track.track.album.images[0].url}
+        //   alt='asdas'
+        //   key={track.track.id}
+        // />
+          // track.track.name
         ))}
     {console.log(tracks)}
     </div>
