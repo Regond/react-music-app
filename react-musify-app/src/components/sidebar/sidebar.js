@@ -65,7 +65,7 @@ export default function Sidebar() {
 
         <div className={styles.userInfo}>
           {image}
-          {/* <p className={styles.userName}>{name}</p> */}
+          
           
         </div>
         <SlMenu  onClick={handleButton} className={styles.btnMenu}/>
