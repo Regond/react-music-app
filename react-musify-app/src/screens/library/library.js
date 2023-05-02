@@ -14,8 +14,18 @@ export default function Library() {
       setPlaylists(response.data.items)
     })
   }, []) 
-  
+
   return (
-    <div>library</div>
+    <div className={styles.mainContainer}>
+      <h1 className={styles.mainTitle}>Playlists</h1>
+      <div className={styles.playlists}>
+        {playlists?.map((playlist) => (
+            <div className={styles.playlist}>
+                
+            </div>
+        ))}
+
+      </div>
+    </div>
   )
 }

@@ -1,0 +1,27 @@
+
+.mainContainer {
+    background-color: #DEDFE4;
+    padding: 30px;
+}
+
+
+.mainTitle {
+    color: #24252A;
+    font-size: 48px;
+}
+
+.playlists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.playlist {
+    width: 300px;
+    height: 350px;
+    background-color: #24252A;
+    border-radius: 10px;
+}
