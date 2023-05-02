@@ -21,13 +21,24 @@ export default function Library() {
   const playPlaylist = (id) => {
     navigate("/player", { state: { id: id } });
   };
-  
+
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.mainTitle}>Playlists</h1>
       <div className={styles.playlists}>
         {playlists?.map((playlist) => (
-            <div className={styles.playlist}>
+            <div 
+              className={styles.playlist}
+              key={playlist.id}
+              onClick={() => playPlaylist(playlist.id)}
+              >
+                <img
+                  src={playlist.images[0].url}
+                  className={styles.playlistImage}
+                  alt="Playlist-Art"
+                />
+
+                
 
             </div>
         ))}
