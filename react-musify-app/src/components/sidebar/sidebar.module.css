@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+a {
+    text-decoration: none !important;
+}
+
+.mainContainer {
+    height: 10.742168674698795vh;
+    width: 100%;
+    background-color: #24252A;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #DEDFE4;
+}
+
+.buttonsContainer {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoName {
+    font-family: 'Righteous', cursive;
+    color: #DEDFE4;
+    cursor: pointer;
+}
+
+.userInfo {
+    height: 90%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profilePic {
+    width: 14%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.userName {
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+.profileImg {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.btnMenu {
+    background-color: #24252A;
+    color:  #DEDFE4;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    width: 35px;
+    height: 35px;
+}
+
+.menu {
+    background-color: #24252A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btnClose {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px){
+    .buttonsContainer {
+        display: none
+    }
+
+    .btnMenu {
+        display: flex;
+    }
+}
