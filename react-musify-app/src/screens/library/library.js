@@ -15,13 +15,20 @@ export default function Library() {
     })
   }, []) 
 
+
+  const navigate = useNavigate();
+
+  const playPlaylist = (id) => {
+    navigate("/player", { state: { id: id } });
+  };
+  
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.mainTitle}>Playlists</h1>
       <div className={styles.playlists}>
         {playlists?.map((playlist) => (
             <div className={styles.playlist}>
-                
+
             </div>
         ))}
 
