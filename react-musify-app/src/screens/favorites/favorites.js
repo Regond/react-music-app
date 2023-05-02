@@ -14,6 +14,17 @@ export default function Favorites() {
 
 
   return (
-    <div> </div>
+    <div>
+
+      {tracks?.map((track) => (
+        <img 
+          src={track.track.album.images[0].url}
+          alt='asdas'
+          key={track.track.id}
+        />
+          
+        ))}
+    {console.log(tracks)}
+    </div>
   )
 }
