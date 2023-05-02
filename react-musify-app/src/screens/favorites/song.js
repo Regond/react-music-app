@@ -9,6 +9,7 @@ export default function Song(track, key) {
     track?.track?.album?.artists?.forEach((element) => {
       artists.push(element.name);
     });
+    
   return (
     <div className={styles.song}> 
         <img 
