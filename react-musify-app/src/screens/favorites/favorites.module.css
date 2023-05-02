@@ -6,13 +6,24 @@
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;    
-    background-color: #DEDFE4;
     padding: 30px;
 }
 
+.favoritesHeader {
+    height: 200px;
+    width: 90%;
+    background: rgb(36,37,42);
+    background: linear-gradient(138deg, rgba(36,37,42,1) 47%, rgba(222,223,224,1) 100%);
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+
 .mainTitle {
-    color: #24252A;
+    color: #DEDFE4;
     font-size: 48px;
     margin-bottom: 10px;
+    margin-left: 20px;
 }
 
