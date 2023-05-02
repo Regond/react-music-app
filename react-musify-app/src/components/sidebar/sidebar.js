@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { slide as Menu } from 'react-burger-menu';
 import { Link } from "react-router-dom";
 import styles from './sidebar.module.css';
 import SidebarButton from './sidebarButton';
