@@ -39,9 +39,10 @@ export default function Library() {
                 />
               <div className={styles.info}>
                   <h3 className={styles.playlistTitle}>{playlist.name}</h3>
-                  <IconContext.Provider  value={{ size: "50px", color: "#DEDFE4" }}>
-                    <AiFillPlayCircle className={styles.play}/>
-                  </IconContext.Provider>
+                    <IconContext.Provider  value={{ size: "50px", color: "#24252A" }}>
+                      <AiFillPlayCircle className={styles.play}/>
+                    </IconContext.Provider>
+                  
               </div>
               <h3 className={styles.totalTracks}>{playlist.tracks.total} Songs</h3>
               
