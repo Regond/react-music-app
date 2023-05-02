@@ -16,7 +16,7 @@ export default function SidebarButton(props) {
       <div className={btnClass}>
         <IconContext.Provider className={styles.btnIcon} value={{ size: "32px" }}>
           {props.icon}
-          {/* <p className={styles.btnTitle}>{props.title}</p> */}
+          <p className={styles.btnTitle}>{props.title}</p>
         </IconContext.Provider>
       </div>
     </Link>
