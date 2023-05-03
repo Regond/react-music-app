@@ -18,7 +18,7 @@ export default function Feed() {
       return;
     }
 
-    APIKit.get(`/search?q=${searchTerm}&type=track`)
+    APIKit.get(`/search?q=${searchTerm}&type=track&limit=50`)
       .then(function(response) {
        setSearchResults(response.data.tracks.items);
       })
