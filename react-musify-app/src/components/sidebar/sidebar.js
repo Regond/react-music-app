@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
 import styles from './sidebar.module.css';
 import SidebarButton from './sidebarButton';
-import { MdSpaceDashboard } from "react-icons/md";
+import { IoSearch } from "react-icons/io5";
 import { MdFavorite } from "react-icons/md";
 import { FaGripfire, FaPlay } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
@@ -41,7 +41,7 @@ export default function Sidebar() {
             <h1 className={styles.logoName}>Musify</h1>
         </Link>
           <div className={styles.buttonsContainer}>
-            <SidebarButton to="/feed" icon={<MdSpaceDashboard />} />
+            <SidebarButton to="/feed" icon={<IoSearch />} />
             <SidebarButton to="/trending" icon={<FaGripfire />} />
             <SidebarButton to="/player" icon={<FaPlay />} />
             <SidebarButton to="/favorites" icon={<MdFavorite />}/>
