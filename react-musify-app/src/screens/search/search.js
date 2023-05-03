@@ -11,6 +11,22 @@ export default function Feed() {
     setSearchTerm(event.target.value);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    if (searchTerm === '') {
+      return;
+    }
+
+    APIKit.get(`/search?q=${searchTerm}&type=track`)
+      .then(function(response) {
+        setSearchResults(response.tracks.items);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
 
   return (
     <div>
