@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import APIKit from '../../spotify';
-
+import styles from './search.module.css';
 
 export default function Search() {
 
