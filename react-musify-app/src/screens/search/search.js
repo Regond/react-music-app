@@ -30,7 +30,15 @@ export default function Feed() {
 
   return (
     <div>
-
+        <form onSubmit={handleFormSubmit}>
+        <input type="text" value={searchTerm} onChange={handleInputChange} />
+        <button type="submit">Search</button>
+      </form>
+      <ul>
+        {searchResults.map((track) => (
+          <li key={track.id}>{track.name}</li>
+        ))}
+      </ul>
     </div>
   )
 }
