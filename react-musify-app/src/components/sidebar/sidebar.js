@@ -41,7 +41,7 @@ export default function Sidebar() {
             <h1 className={styles.logoName}>Musify</h1>
         </Link>
           <div className={styles.buttonsContainer}>
-            <SidebarButton to="/feed" icon={<IoSearch />} />
+            <SidebarButton to="/search" icon={<IoSearch />} />
             <SidebarButton to="/trending" icon={<FaGripfire />} />
             <SidebarButton to="/player" icon={<FaPlay />} />
             <SidebarButton to="/favorites" icon={<MdFavorite />}/>
@@ -51,7 +51,7 @@ export default function Sidebar() {
          {
           open?
             <div className={styles.menu}>
-              <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
+              <SidebarButton title="Search" to="/search" icon={<IoSearch />} />
               <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} />
               <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
               <SidebarButton title="Favorites" to="/favorites" icon={<MdFavorite />}/>
