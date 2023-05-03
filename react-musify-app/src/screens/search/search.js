@@ -20,7 +20,7 @@ export default function Feed() {
 
     APIKit.get(`/search?q=${searchTerm}&type=track`)
       .then(function(response) {
-        setSearchResults(response.tracks.items);
+       setSearchResults(response.data.tracks.items);
       })
       .catch(function(error) {
         console.log(error);
