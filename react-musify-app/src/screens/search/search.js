@@ -4,6 +4,7 @@ import APIKit from '../../spotify';
 import styles from './search.module.css';
 import { IoSearch } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import SearchItem from './searchItem';
 
 export default function Search() {
 
@@ -46,11 +47,11 @@ export default function Search() {
          </div>
 
         </form>
-        <ul>
+        <div className={styles.searchResultContainer}>
           {searchResults.map((track) => (
-            <li key={track.id}>{track.name}</li>
+            <SearchItem track = {track}/>
           ))}
-        </ul>
+        </div>
       </div>
 
       <Recomendations />
