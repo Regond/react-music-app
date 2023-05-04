@@ -4,6 +4,7 @@ import APIKit from '../../spotify';
 import styles from './search.module.css';
 import { IoSearch } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import { useTransition, animated } from 'react-spring';
 import SearchItem from './searchItem';
 
 export default function Search() {
@@ -31,6 +32,13 @@ export default function Search() {
       });
   };
 
+  const transitions = useTransition(searchResults, {
+    key: (item) => item.id,
+    from: { opacity: 0, transform: 'translateY(-50%)' },
+    enter: { opacity: 1, transform: 'translateY(0%)' },
+    trail: 50,
+  });
+
 
   return (
     <div className={styles.mainContainer}>
@@ -48,9 +56,11 @@ export default function Search() {
 
         </form>
         <div className={styles.searchResultContainer}>
-          {searchResults.map((track) => (
-            <SearchItem track = {track}/>
-          ))}
+        {transitions((style, track) => (
+          <animated.div key={track.id} style={style}>
+            <SearchItem track={track} />
+          </animated.div>
+        ))}
         </div>
       </div>
 
