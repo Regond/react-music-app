@@ -5,7 +5,7 @@ import styles from './search.module.css';
 import { IoSearch } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { useTransition, animated } from 'react-spring';
-import SearchItem from './searchItem';
+import SearchItem from '../favorites/song';
 
 export default function Search() {
 
@@ -42,7 +42,6 @@ export default function Search() {
 
   return (
     <div className={styles.mainContainer}>
-
       <div className={styles.searchContainer}>
         <form className={styles.form} onSubmit={handleFormSubmit}>
           <div className={styles.inputContainer}>
@@ -56,11 +55,11 @@ export default function Search() {
 
         </form>
         <div className={styles.searchResultContainer}>
-        {transitions((style, track) => (
-          <animated.div key={track.id} style={style}>
-            <SearchItem track={track} />
-          </animated.div>
-        ))}
+          {transitions((style, track, index) => (
+            <animated.div key={index.ctrl.id} style={style}>
+              <SearchItem track={track} />
+            </animated.div>
+          ))}
         </div>
       </div>
 

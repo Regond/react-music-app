@@ -12,7 +12,7 @@
 }
 .form{
     height: 60px;
-    width: 70%;
+    width: 80%;
     background-color: #24252A;  
     display: flex;
     justify-content: center;
@@ -56,7 +56,7 @@
 }
 
 .searchResultContainer {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 10px;
