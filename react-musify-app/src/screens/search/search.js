@@ -11,10 +11,12 @@ export default function Search() {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [showGenres, setShowGenres] = useState(true);
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -22,7 +24,7 @@ export default function Search() {
     if (searchTerm === '') {
       return;
     }
-
+    setShowGenres(!showGenres);
     APIKit.get(`/search?q=${searchTerm}&type=track&limit=50`)
       .then(function(response) {
        setSearchResults(response.data.tracks.items);
@@ -63,7 +65,7 @@ export default function Search() {
         </div>
       </div>
 
-      <Genres />
+      {showGenres ? <Genres /> : null }
 
 
     </div>
