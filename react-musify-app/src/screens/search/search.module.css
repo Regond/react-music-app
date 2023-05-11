@@ -1,0 +1,64 @@
+.mainContainer {
+    padding: 20px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+.searchContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.form{
+    height: 60px;
+    width: 80%;
+    background-color: #24252A;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.inputContainer {
+    height: 100%;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.searchInput {
+    width: 80%;
+    height: 80%;
+    background-color: #24252A; 
+    color: white;
+    font-size: 28px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+
+.searchButton {
+    width: 100px;
+    height: 65%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color:#24252A;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.searchResultContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,44 @@
+.mainContainer {
+    width: 350px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: space-between;
+    transition: 0.3s all ease;
+}
+
+.genre {
+    color: white;
+}
+
+.mainContainer:hover {
+    transform: scale(1.02);
+}
+
+.play {
+    transition: all 0.5s ease;
+}
+
+.play:hover {
+    animation: rotation 0.5s ease; 
+}
+
+
+@keyframes glowing {
+
+    0% {border-radius: 50%; box-shadow: 0 0 3px white; rotate: 0;}
+    50% { border-radius: 50%; box-shadow: 0 0 10px #d7d8dd; rotate: 180;}
+    100% { border-radius: 50%; box-shadow: 0 0 3px white; rotate: 0;}
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
