@@ -9,9 +9,9 @@ export default function Recomendations() {
   const [tracks, setTracks] = useState(null);
 
   useEffect(() => {
-    APIKit.get('recommendations/available-genre-seeds').then(function(response) {
-      // setTracks(response.data.albums.items);
-      console.log(response);
+    APIKit.get('browse/new-releases').then(function(response) {
+      setTracks(response.data.albums.items);
+      console.log(response.data.albums.items);
   })
 }, []) 
 
