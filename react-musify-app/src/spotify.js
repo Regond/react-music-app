@@ -4,7 +4,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize?',
       clientID =  '7206f7705f26434b8370f90501806e30' ,
       redirectUri = 'http://localhost:3000';
 
-const scopes = ["user-library-read", "playlist-read-private"];
+const scopes = ["user-library-read", "playlist-read-private", "user-library-modify"];
 
 export const loginEndpoint = `${authEndpoint}client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopes.join(
     "%20"
