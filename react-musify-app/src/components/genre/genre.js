@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './genre.module.css';
 
-export default function Genre() {
+export default function Genre(props) {
   return (
-    <div>genre</div>
+    <div className={styles.mainContainer} style={props.style}>
+      <h2 className={styles.genre}>{props.genre}</h2>
+
+    </div>
   )
 }
