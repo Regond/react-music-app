@@ -14,7 +14,7 @@ export default function Favorites() {
   const [name, setName] = useState("");
 
   useEffect(() => {
-      APIKit.get('me/tracks').then(function(response) {
+      APIKit.get('me/tracks?limit=50').then(function(response) {
         setTracks(response.data.items);
     })
   }, [tracks]) 
