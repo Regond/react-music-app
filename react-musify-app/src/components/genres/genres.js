@@ -3,6 +3,6 @@ import styles from './genres.module.css';
 
 export default function Genres() {
   return (
-    <div>G</div>
+    <div>Genres</div>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Recomendations from '../../components/recomendations/recomendations';
 import APIKit from '../../spotify';
 import styles from './search.module.css';
 import { IoSearch } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { useTransition, animated } from 'react-spring';
 import SearchItem from '../favorites/song';
+import Genres from '../../components/genres/genres';
 
 export default function Search() {
 
@@ -63,7 +63,7 @@ export default function Search() {
         </div>
       </div>
 
-      <Recomendations />
+      <Genres />
 
 
     </div>
