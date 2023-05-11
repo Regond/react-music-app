@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { useLocation } from "react-router-dom";
 import GenreList from '../../components/genreList/genreList';
 import styles from './trending.module.css';
@@ -10,7 +10,7 @@ export default function Trending() {
   const [playlists, setPlaylists] = useState(null);
 
   useEffect(() => {
-    APIKit.get('browse/featured-playlists').then(function(response) {
+    APIKit.get('browse/featured-playlists?limit=5').then(function(response) {
       setPlaylists(response.data.playlists.items);
       console.log(response.data.playlists.items);
   })
@@ -23,7 +23,7 @@ export default function Trending() {
       <div className={styles.mainContainer}>
         <h1 className={styles.mainTitle}>Trending</h1>
          <div className={styles.features}>
-            <h2>Featured</h2>
+            <h2 className={styles.title}>Featured</h2>
             <div className={styles.playlists}>
                 {playlists?.map((playlist) => (
                     <div 

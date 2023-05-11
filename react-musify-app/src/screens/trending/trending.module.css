@@ -1,7 +1,6 @@
 .mainContainer  {
     width: 80%;
     margin: 20px auto;
-    background-color: red;
     display: flex;
     flex-direction: column;
 }
@@ -13,12 +12,18 @@
     padding: 15px;
     flex-direction: column;
     color: white;
+    border-radius: 10px;
+}
+.title {
+    margin-bottom: 10px;
 }
 
 .playlists {
     display: flex;
-    overflow: auto;
-    gap: 10px;
+    overflow: hidden;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .playlist {
@@ -86,3 +91,23 @@
 
 
 
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
