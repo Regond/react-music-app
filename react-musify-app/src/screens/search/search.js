@@ -25,7 +25,7 @@ export default function Search() {
       return;
     }
     setShowGenres(!showGenres);
-    APIKit.get(`/search?q=${searchTerm}&type=track&limit=50`)
+    APIKit.get(`/search?q=${searchTerm}&type=track&limit=1`)
       .then(function(response) {
        setSearchResults(response.data.tracks.items);
       })
