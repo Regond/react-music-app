@@ -17,7 +17,7 @@ export default function Favorites() {
       APIKit.get('me/tracks').then(function(response) {
         setTracks(response.data.items);
     })
-  }, []) 
+  }, [tracks]) 
 
   useEffect(() => {
     APIKit.get('me/').then(function(response) {
