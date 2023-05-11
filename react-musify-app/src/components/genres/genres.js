@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styles from './genres.module.css';
 import APIKit from '../../spotify';
 import Genre from '../genre/genre';
+import { useTransition, animated } from 'react-spring';
 
 export default function Genres() {
 
@@ -14,6 +15,8 @@ export default function Genres() {
       console.log(response.data.genres);
   })
 }, []) 
+
+
   return (
     <div className={styles.mainContainer}>
         <h1 className={styles.mainTitle}>Genres</h1>

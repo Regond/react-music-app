@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import APIKit from '../../spotify';
 import styles from './favorites.module.css';
 import Song from './song';
+import { useTransition, animated } from 'react-spring';
 import { IconContext } from "react-icons";
 import { MdFavorite } from "react-icons/md";
 export default function Favorites() {
@@ -13,10 +14,10 @@ export default function Favorites() {
   const [name, setName] = useState("");
 
   useEffect(() => {
-      APIKit.get('me/tracks').then(function(response) {
+      APIKit.get('me/tracks?limit=50').then(function(response) {
         setTracks(response.data.items);
     })
-  }, []) 
+  }, [tracks]) 
 
   useEffect(() => {
     APIKit.get('me/').then(function(response) {
