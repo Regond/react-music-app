@@ -52,3 +52,12 @@
     50% { border-radius: 50%; box-shadow: 0 0 10px #28292f; }
     100% { border-radius: 50%; box-shadow: 0 0 3px #393b43; }
 }
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
