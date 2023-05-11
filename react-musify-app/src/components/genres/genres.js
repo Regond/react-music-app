@@ -16,9 +16,13 @@ export default function Genres() {
 }, []) 
   return (
     <div className={styles.mainContainer}>
-        {genres?.map((genre,index) => (
-            <Genre key={index} genre={genre} style={{background: `linear-gradient(to right, ${colors[index % colors.length]}, #000000`,}}/>
-        ))}
+        <h1 className={styles.mainTitle}>Genres</h1>
+        <div className={styles.genres}>
+            {genres?.map((genre,index) => (
+                <Genre key={index} genre={genre} style={{background: `linear-gradient(to right, ${colors[index % colors.length]}, #000000`,}}/>
+            ))}
+        </div>
+
     </div>
   )
 }
