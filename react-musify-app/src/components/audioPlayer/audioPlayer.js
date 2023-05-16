@@ -15,14 +15,12 @@ export default function AudioPlayer({
 
     let audioSrc = total[currentIndex]?.track.preview_url;
     const isReady = useRef(false);
-
-    const { duration } = audioRef.current;
-
     const audioRef = useRef(new Audio(total[0]?.track.preview_url));
+    const intervalRef = useRef();
+    const { duration } = audioRef.current;
 
     const startTimer = () => {
       clearInterval(intervalRef.current);
-  
       intervalRef.current = setInterval(() => {
         if (audioRef.current.ended) {
           handleNext();
@@ -35,8 +33,9 @@ export default function AudioPlayer({
     useEffect(() => {
       if (audioRef.current.src) {
         if (isPlaying) {
-          audioRef.current.play();
-          startTimer();
+          audioRef.current.play().then(() => {
+            startTimer();
+          });
         } else {
           clearInterval(intervalRef.current);
           audioRef.current.pause();
@@ -54,18 +53,25 @@ export default function AudioPlayer({
     }, [isPlaying]);
 
     useEffect(() => {
-      audioRef.current.pause();
       audioRef.current = new Audio(audioSrc);
-  
-      setTrackProgress(audioRef.current.currentTime);
-  
-      if (isReady.current) {
-        audioRef.current.play();
-        setIsPlaying(true);
-        startTimer();
-      } else {
-        isReady.current = true;
-      }
+      const onCanPlay = () => {
+        setTrackProgress(audioRef.current.currentTime);
+        if (isReady.current) {
+          audioRef.current.play();
+          setIsPlaying(true);
+          startTimer();
+        } else {
+          isReady.current = true;
+        }
+      };
+    
+      audioRef.current.addEventListener('canplay', onCanPlay);
+    
+      return () => {
+        audioRef.current.removeEventListener('canplay', onCanPlay);
+        audioRef.current.pause();
+        clearInterval(intervalRef.current);
+      };
     }, [currentIndex]);
   
     useEffect(() => {
@@ -113,7 +119,13 @@ export default function AudioPlayer({
             </div>
         </div>
         <div className={styles.controls}>
-            <Controls />
+            <Controls             
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+              total={total}
+            />
         </div>
       </div>
 
