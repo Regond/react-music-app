@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import APIKit from '../../spotify';
 import styles from './styles.module.css';
 import { IconContext } from "react-icons";
@@ -12,6 +13,11 @@ export default function GenreList(genre) {
         setPlaylists(response.data.playlists.items)
       })
     }, []) 
+
+  const navigate = useNavigate();
+  const playPlaylist = (id) => {
+    navigate("/player", { state: { id: id } });
+  };
   return (
     <div className={styles.mainContainer}>
         <h1>{genre.genre}'s playlists</h1>
@@ -20,6 +26,7 @@ export default function GenreList(genre) {
                 <div 
                   className={styles.playlist}
                   key={playlist.id}
+                  onClick={() => playPlaylist(playlist.id)}
                   >
                     <img
                       src={playlist.images[0].url}
