@@ -14,8 +14,9 @@ export default function AudioPlayer({
     });
 
     console.log(currentTrack)
-  return (
-    <div className={styles.mainContainer}>
+  return  (
+    <div className={styles.wrapper}>
+        <div className={styles.mainContainer}>
         <div className={styles.songInfo}>
             <img 
                 className={styles.songImage}
@@ -33,6 +34,8 @@ export default function AudioPlayer({
         <div className={styles.controls}>
             Controls
         </div>
+        </div>
+
     </div>
   )
 }
