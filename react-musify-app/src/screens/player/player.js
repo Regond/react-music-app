@@ -12,7 +12,7 @@ export default function Player() {
 
   useEffect(() => {
     if(location.state) {
-      apiClient
+      APIKit
       .get("playlists/" + location.state?.id + "/tracks")
       .then(response => {
         setTracks(response.data.items);
@@ -21,7 +21,7 @@ export default function Player() {
     }
   }, [location.state]);
 
-  
+
   return (
     <div className={styles.mainContainer}>
     </div>
