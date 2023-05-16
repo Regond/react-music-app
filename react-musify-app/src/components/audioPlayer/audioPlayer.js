@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from './audioPlayer.module.css';
+import Controls from './controls/controls';
 
 export default function AudioPlayer({
     currentTrack,
@@ -32,9 +33,9 @@ export default function AudioPlayer({
         </div>
         <div className={styles.progressBar}></div>
         <div className={styles.controls}>
-            Controls
+            <Controls />
         </div>
-        </div>
+      </div>
 
     </div>
   )
