@@ -14,6 +14,9 @@ export default function AudioPlayer({
     const [trackProgress, setTrackProgress] = useState(0);
 
     let audioSrc = total[currentIndex]?.track.preview_url;
+    const isReady = useRef(false);
+
+    const { duration } = audioRef.current;
 
     const audioRef = useRef(new Audio(total[0]?.track.preview_url));
 
