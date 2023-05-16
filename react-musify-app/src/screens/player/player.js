@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import styles from './player.module.css';
 
-export default function Player() {
+export default function layer() {
   return (
-    <div>P</div>
+    <div className={styles.mainContainer}>
+        Hello
+    </div>
   )
 }
