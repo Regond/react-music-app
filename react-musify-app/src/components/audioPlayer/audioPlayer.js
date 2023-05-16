@@ -20,6 +20,18 @@ export default function AudioPlayer({
 
     const audioRef = useRef(new Audio(total[0]?.track.preview_url));
 
+    const startTimer = () => {
+      clearInterval(intervalRef.current);
+  
+      intervalRef.current = setInterval(() => {
+        if (audioRef.current.ended) {
+          handleNext();
+        } else {
+          setTrackProgress(audioRef.current.currentTime);
+        }
+      }, [1000]);
+    };
+
     const artists = [];
     currentTrack?.album?.artists.forEach((artist) => {
       artists.push(artist.name);
