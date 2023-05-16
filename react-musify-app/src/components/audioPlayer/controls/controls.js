@@ -16,6 +16,9 @@ export default function Controls({
             <div className={styles.action} onClick={handlePrev}>
                 <IoPlaySkipBack />
             </div>
+            <div className={styles.action} onClick={handleNext}>
+                <IoPlaySkipForward />
+            </div>
 
         </div>
     </IconContext.Provider>
