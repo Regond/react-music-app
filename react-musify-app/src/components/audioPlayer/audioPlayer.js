@@ -8,7 +8,10 @@ export default function AudioPlayer({
     total,
   }) {
 
-    console.log(currentTrack);
+    const artists = [];
+    currentTrack?.album?.artists.forEach((artist) => {
+      artists.push(artist.name);
+    });
 
   return (
     <div className={styles.mainContainer}>
@@ -17,7 +20,9 @@ export default function AudioPlayer({
                 className={styles.songImage}
                 src={currentTrack?.album?.images[0]?.url}
             />
-            song info
+            <div className={styles.info}>
+
+            </div>
         </div>
         <div className={styles.controls}>
             Controls
