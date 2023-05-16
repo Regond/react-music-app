@@ -119,7 +119,7 @@ export default function AudioPlayer({
                 <h2 className={styles.duration}><AiOutlineClockCircle /> Duration: <span>0:{addZero(Math.round(trackProgress))}</span>/ 0:30</h2>
                 <div className={styles.type}>{currentTrack?.type}</div>
                 <div className={styles.progressBar}>
-                    <div className={styles.progress} style={{width: currentPercentage + '%'}}></div>
+                    <div className={styles.progress} style={{width: currentPercentage + '%', transition: 'width .3s'}}></div>
                 </div>
             </div>
         </div>
