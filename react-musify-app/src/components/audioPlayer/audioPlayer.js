@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import styles from './audioPlayer.module.css';
 
-export default function AudioPlayer() {
+export default function AudioPlayer({
+    currentTrack,
+    currentIndex,
+    setCurrentIndex,
+    total,
+  }) {
+
+
   return (
-    <div>audioPlayer</div>
+    <div className={styles.mainContainer}>
+        audioPlayer
+    </div>
   )
 }
