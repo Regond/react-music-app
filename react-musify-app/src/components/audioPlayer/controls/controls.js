@@ -17,7 +17,7 @@ export default function Controls({
                 <IoPlaySkipBack />
             </div>
             <div 
-                className={styles.action}
+                className={isPlaying ? styles.playing : styles.action}
                 onClick={() => setIsPlaying(!isPlaying)}
             >
                 {isPlaying ? <FaPause /> : <IoPlay />}
