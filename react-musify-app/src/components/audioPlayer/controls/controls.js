@@ -11,9 +11,12 @@ export default function Controls({
     handlePrev,
   }) {
   return (
-    <IconContext.Provider >
+    <IconContext.Provider value={{ size: "50px", color: "black" }}>
         <div className={styles.mainContainer}>
-            
+            <div className={styles.action} onClick={handlePrev}>
+                <IoPlaySkipBack />
+            </div>
+
         </div>
     </IconContext.Provider>
 
