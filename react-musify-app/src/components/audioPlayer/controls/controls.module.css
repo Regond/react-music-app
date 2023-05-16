@@ -5,18 +5,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 .action {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.5s ease;
+    background-color: white;
 }
 .action:hover {
     transform: scale(1.2);

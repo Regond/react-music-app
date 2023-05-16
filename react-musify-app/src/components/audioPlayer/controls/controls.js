@@ -16,6 +16,12 @@ export default function Controls({
             <div className={styles.action} onClick={handlePrev}>
                 <IoPlaySkipBack />
             </div>
+            <div 
+                className={styles.action}
+                onClick={() => setIsPlaying(!isPlaying)}
+            >
+                {isPlaying ? <FaPause /> : <IoPlay />}
+            </div>
             <div className={styles.action} onClick={handleNext}>
                 <IoPlaySkipForward />
             </div>

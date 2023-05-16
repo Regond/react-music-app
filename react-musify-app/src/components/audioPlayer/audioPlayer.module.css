@@ -47,7 +47,11 @@
     align-items: flex-start;
     justify-content: space-evenly;
 }
-
+.duration {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
 .scrollContainer {
     width: 700px;
     overflow: hidden;
@@ -83,6 +87,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .progressBar {

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from './audioPlayer.module.css';
 import Controls from './controls/controls';
+import {AiOutlineClockCircle} from 'react-icons/ai'
 
 export default function AudioPlayer({
     currentTrack,
@@ -27,7 +28,7 @@ export default function AudioPlayer({
                 <div className={`${styles.scrollContainer} ${styles.marqueeContainer}`}>
                     <h1 className={`${styles.songTitle} ${styles.marquee}`}>{currentTrack?.name} - {artists.join(" | ")}</h1>
                 </div>
-                <h2 className={styles.duration}>Duration: 0:30</h2>
+                <h2 className={styles.duration}><AiOutlineClockCircle /> Duration: 0:30</h2>
                 <div className={styles.type}>{currentTrack?.type}</div>
             </div>
         </div>
