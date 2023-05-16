@@ -12,6 +12,8 @@ export default function AudioPlayer({
 
     const [isPlaying, setIsPlaying] = useState(false);
     let audioSrc = total[currentIndex]?.track.preview_url;
+    
+    const audioRef = useRef(new Audio(total[0]?.track.preview_url));
 
     const artists = [];
     currentTrack?.album?.artists.forEach((artist) => {
