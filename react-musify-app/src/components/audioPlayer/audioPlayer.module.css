@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .mainContainer {
@@ -94,6 +95,9 @@
     width: 100%;
     height: 10px;
     background-color: grey;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
   

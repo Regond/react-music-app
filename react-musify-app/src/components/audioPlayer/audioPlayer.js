@@ -30,9 +30,9 @@ export default function AudioPlayer({
                 </div>
                 <h2 className={styles.duration}><AiOutlineClockCircle /> Duration: 0:30</h2>
                 <div className={styles.type}>{currentTrack?.type}</div>
+                <div className={styles.progressBar}></div>
             </div>
         </div>
-        <div className={styles.progressBar}></div>
         <div className={styles.controls}>
             <Controls />
         </div>
