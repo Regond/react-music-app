@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./controls.module.css";
 import { IconContext } from "react-icons";
-import { FaPause } from "react-icons/fa";
-import { IoPlaySkipBack, IoPlaySkipForward, IoPlay } from "react-icons/io5";
+import { IoPlayBackSharp, IoPlayForwardSharp, IoPlaySharp } from "react-icons/io5";
+import { IoMdPause } from "react-icons/io";
 
 export default function Controls({
     isPlaying,
@@ -14,16 +14,16 @@ export default function Controls({
     <IconContext.Provider value={{ size: "50px", color: "black" }}>
         <div className={styles.mainContainer}>
             <div className={styles.action} onClick={handlePrev}>
-                <IoPlaySkipBack />
+                <IoPlayBackSharp />
             </div>
             <div 
                 className={isPlaying ? styles.playing : styles.action}
                 onClick={() => setIsPlaying(!isPlaying)}
             >
-                {isPlaying ? <FaPause /> : <IoPlay />}
+                { isPlaying ? <IoMdPause /> : <IoPlaySharp />}
             </div>
             <div className={styles.action} onClick={handleNext}>
-                <IoPlaySkipForward />
+                <IoPlayForwardSharp />
             </div>
 
         </div>

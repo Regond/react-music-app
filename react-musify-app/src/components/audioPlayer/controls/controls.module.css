@@ -34,7 +34,6 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.5s ease;
-    background-color: white;
 }
 
 .playing {
@@ -46,7 +45,6 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.5s ease;
-    background-color: white;
     animation: glowing 1s infinite;
 }
 
