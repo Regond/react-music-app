@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './player.module.css';
 import { useLocation } from "react-router-dom";
 import APIKit from "../../spotify";
+import AudioPlayer from '../../components/audioPlayer/audioPlayer';
 
 export default function Player() {
 
@@ -27,6 +28,12 @@ export default function Player() {
 
   return (
     <div className={styles.mainContainer}>
+        <AudioPlayer 
+          currentTrack={currentTrack}
+          total={tracks}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+        />
     </div>
   )
 }
