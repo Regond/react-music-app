@@ -53,6 +53,28 @@ export default function AudioPlayer({
       }
     }, [isPlaying]);
 
+    useEffect(() => {
+      audioRef.current.pause();
+      audioRef.current = new Audio(audioSrc);
+  
+      setTrackProgress(audioRef.current.currentTime);
+  
+      if (isReady.current) {
+        audioRef.current.play();
+        setIsPlaying(true);
+        startTimer();
+      } else {
+        isReady.current = true;
+      }
+    }, [currentIndex]);
+  
+    useEffect(() => {
+      return () => {
+        audioRef.current.pause();
+        clearInterval(intervalRef.current);
+      };
+    }, []);
+
     const artists = [];
     currentTrack?.album?.artists.forEach((artist) => {
       artists.push(artist.name);
