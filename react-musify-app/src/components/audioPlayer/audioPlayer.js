@@ -11,7 +11,12 @@ export default function AudioPlayer({
 
   return (
     <div className={styles.mainContainer}>
-        audioPlayer
+        <div className={styles.songInfo}>
+            song info
+        </div>
+        <div className={styles.controls}>
+            Controls
+        </div>
     </div>
   )
 }
