@@ -10,12 +10,14 @@ export default function AudioPlayer({
     total,
   }) {
 
+    const [isPlaying, setIsPlaying] = useState(false);
+    let audioSrc = total[currentIndex]?.track.preview_url;
+
     const artists = [];
     currentTrack?.album?.artists.forEach((artist) => {
       artists.push(artist.name);
     });
 
-    console.log(currentTrack)
   return  (
     <div className={styles.wrapper}>
         <div className={styles.mainContainer}>
