@@ -86,6 +86,10 @@ export default function AudioPlayer({
       else setCurrentIndex(currentIndex - 1);
     };
 
+    const addZero = (n) => {
+      return n > 9 ? "" + n : "0" + n;
+    };
+
     const artists = [];
     currentTrack?.album?.artists.forEach((artist) => {
       artists.push(artist.name);
