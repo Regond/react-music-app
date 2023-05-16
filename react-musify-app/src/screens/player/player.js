@@ -21,6 +21,9 @@ export default function Player() {
     }
   }, [location.state]);
 
+  useEffect(() => {
+    setCurrentTrack(tracks[currentIndex]?.track);
+  }, [currentIndex, tracks]);
 
   return (
     <div className={styles.mainContainer}>
