@@ -1,7 +1,7 @@
 .mainContainer {
     width: 80%;
     height: 400px;
-    background-color: #1c1c20;
+    /* background-color: #1c1c20; */
 }
 
 .songInfo {
@@ -11,6 +11,8 @@
     align-items: center;
     color: white;
     justify-content: space-evenly;
+    background-color: rgba(28, 28, 32);
+    backdrop-filter: blur(100px);
 }
 
 .songImage {
@@ -24,19 +26,29 @@
     justify-content: space-evenly;
 }
 
+.scrollContainer {
+    width: 700px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
 .songTitle {
     text-align: center;
     font-size: 58px;
     font-weight: bold;
-    margin: 0px;
+    display: inline-block;
     color: #c4d0e3;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
 }
+
+.marqueeContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee {
+  animation: marquee 10s linear infinite;
+}
+
 
 
 .type  {
@@ -50,3 +62,25 @@
     justify-content: center;
     align-items: center;
 }
+
+.progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+}
+
+  
+  @keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    65% {
+        transform: translateX(-100%);
+    }
+    65.01% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }

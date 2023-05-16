@@ -13,6 +13,7 @@ export default function AudioPlayer({
       artists.push(artist.name);
     });
 
+    console.log(currentTrack)
   return (
     <div className={styles.mainContainer}>
         <div className={styles.songInfo}>
@@ -21,11 +22,14 @@ export default function AudioPlayer({
                 src={currentTrack?.album?.images[0]?.url}
             />
             <div className={styles.info}>
-                <h1 className={styles.songTitle}>{currentTrack?.name} - {artists.join(" | ")}</h1>
+                <div className={`${styles.scrollContainer} ${styles.marqueeContainer}`}>
+                    <h1 className={`${styles.songTitle} ${styles.marquee}`}>{currentTrack?.name} - {artists.join(" | ")}</h1>
+                </div>
                 <h2 className={styles.duration}>Duration: 0:30</h2>
                 <div className={styles.type}>{currentTrack?.type}</div>
             </div>
         </div>
+        <div className={styles.progressBar}></div>
         <div className={styles.controls}>
             Controls
         </div>
