@@ -66,7 +66,6 @@ export default function AudioPlayer({
       };
     
       audioRef.current.addEventListener('canplay', onCanPlay);
-    
       return () => {
         audioRef.current.removeEventListener('canplay', onCanPlay);
         audioRef.current.pause();
@@ -113,7 +112,7 @@ export default function AudioPlayer({
                 <div className={`${styles.scrollContainer} ${styles.marqueeContainer}`}>
                     <h1 className={`${styles.songTitle} ${styles.marquee}`}>{currentTrack?.name} - {artists.join(" | ")}</h1>
                 </div>
-                <h2 className={styles.duration}><AiOutlineClockCircle /> Duration: 0:30</h2>
+                <h2 className={styles.duration}><AiOutlineClockCircle /> Duration: <span>0:{addZero(Math.round(trackProgress))}</span>/ 0:30</h2>
                 <div className={styles.type}>{currentTrack?.type}</div>
                 <div className={styles.progressBar}></div>
             </div>
