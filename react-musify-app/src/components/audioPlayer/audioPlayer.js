@@ -19,6 +19,8 @@ export default function AudioPlayer({
     const intervalRef = useRef();
     const { duration } = audioRef.current;
 
+    const currentPercentage = duration ? (trackProgress / duration) * 100 : 0;
+
     const startTimer = () => {
       clearInterval(intervalRef.current);
       intervalRef.current = setInterval(() => {
@@ -31,6 +33,7 @@ export default function AudioPlayer({
     };
 
     useEffect(() => {
+      console.log(currentPercentage);
       if (audioRef.current.src) {
         if (isPlaying) {
           audioRef.current.play().then(() => {
@@ -83,6 +86,7 @@ export default function AudioPlayer({
     const handleNext = () => {
       if (currentIndex < total.length - 1) {
         setCurrentIndex(currentIndex + 1);
+        setIsPlaying(false);
       } else setCurrentIndex(0);
     };
 
