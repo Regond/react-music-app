@@ -8,10 +8,15 @@ export default function AudioPlayer({
     total,
   }) {
 
+    console.log(currentTrack);
 
   return (
     <div className={styles.mainContainer}>
         <div className={styles.songInfo}>
+            <img 
+                className={styles.songImage}
+                src={currentTrack?.album?.images[0]?.url}
+            />
             song info
         </div>
         <div className={styles.controls}>

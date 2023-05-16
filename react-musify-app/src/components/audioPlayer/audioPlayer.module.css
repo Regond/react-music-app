@@ -8,3 +8,8 @@
     width: 100%;
     height: 70%;
 }
+
+.songImage {
+    height: 80%;
+    border-radius: 50%;
+}
