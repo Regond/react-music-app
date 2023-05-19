@@ -1,0 +1,58 @@
+.mainContainer {
+    width: 100%;
+    height: 100px;
+    background-color: #DEDFE4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(1px);
+}
+
+.mainContainer::before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 -20px;
+    /*размываем элемент*/
+    box-shadow: inset 0 0 2000px rgba(222, 223, 228, .2);
+    filter: blur(1px);
+
+  }
+
+.action {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.playing {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    animation: glowing 1s infinite;
+}
+
+@keyframes glowing {
+    0% { border-radius: 50%; box-shadow: 0 0 3px #393b43; }
+    50% { border-radius: 50%; box-shadow: 0 0 10px #28292f; }
+    100% { border-radius: 50%; box-shadow: 0 0 3px #393b43; }
+}
+.action:hover {
+    transform: scale(1.2);
+}

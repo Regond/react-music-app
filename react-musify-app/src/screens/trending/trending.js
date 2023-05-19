@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import GenreList from '../../components/genreList/genreList';
 import styles from './trending.module.css';
@@ -16,6 +17,10 @@ export default function Trending() {
   })
 }, []) 
 
+  const navigate = useNavigate();
+  const playPlaylist = (id) => {
+    navigate("/player", { state: { id: id } });
+  };
   const location = useLocation();
   const showGenreItems =  location.state?.genre;
   return (

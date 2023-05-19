@@ -7,7 +7,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #DEDFE4;
+  background-color: #0a0b0b;
+  border-radius: 30px;
+  background-color: #252628;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+    circle at center left,
+    transparent 0,
+    #131414 100px
+  ),
+  repeating-linear-gradient(#17191b55, #16181b);
 }
 
 code {
