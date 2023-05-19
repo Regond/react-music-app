@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import APIKit from "../../spotify";
 import Queue from '../../components/queue/queue';
 import AudioPlayer from '../../components/audioPlayer/audioPlayer';
+import Widget from '../../components/widgets/widget';
 
 export default function Player() {
 
@@ -12,7 +13,7 @@ export default function Player() {
   const [currentTrack, setCurrentTrack] = useState({});
   const [image, setImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [artist, setArtist] = useState();
 
   useEffect(() => {
     if(location.state.id) {
@@ -21,6 +22,7 @@ export default function Player() {
       .then(response => {
         setTracks(response.data.items);
         setCurrentTrack(response.data?.items[0]?.track);
+        setArtist(response.data?.items[0]?.track.artists[0]?.id);
       });
     }
     else {
@@ -29,6 +31,7 @@ export default function Player() {
       .then(response => {
         setTracks(response.data?.items);
         setCurrentTrack(response.data?.items[0]);
+        setArtist(response.data?.items[0].artists[0]?.id);
       });
 
       APIKit
@@ -54,6 +57,7 @@ export default function Player() {
         />
         <div className={styles.widgets}>
           <Queue tracks={tracks} setCurrentIndex={setCurrentIndex}/>
+          <Widget artistID={artist}/>
         </div>
 
     </div>
