@@ -1,0 +1,41 @@
+.mainContainer {
+    width: 30%;
+    height: 300px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+h1, h2, p {
+    color: #DEDFE4;
+    margin: 0;
+}
+
+.queueList {
+    height: 60%;
+    width: 100%;
+    overflow-y: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.queueList::-webkit-scrollbar {
+    display: none;
+  }
+
+ .queueItem {
+    justify-content: space-between;
+    width: 80%;
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+  }
+  .queueItem:hover {
+    transform: scale(0.95);
+  }
