@@ -5,6 +5,7 @@ import APIKit from "../../spotify";
 import Queue from '../../components/queue/queue';
 import AudioPlayer from '../../components/audioPlayer/audioPlayer';
 import Widget from '../../components/widgets/widget';
+import Recomendations from '../../components/recomendations/recomendations';
 
 export default function Player() {
 
@@ -57,6 +58,7 @@ export default function Player() {
         />
         <div className={styles.widgets}>
           <Queue tracks={tracks} setCurrentIndex={setCurrentIndex}/>
+          <Recomendations setCurrentIndex={setCurrentIndex}/>
           <Widget artistID={artist}/>
         </div>
 

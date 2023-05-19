@@ -11,7 +11,6 @@ export default function Widget({ artistID }) {
         .get(`/artists/${artistID}/related-artists`)
         .then(response => {
             setSimilar(response.data?.artists);
-            console.log(response.data?.artists)
         })
     }
   return (
