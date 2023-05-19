@@ -62,11 +62,9 @@ export default function Sidebar() {
             undefined
          }
 
-        <div className={styles.userInfo}>
-          {image}
-          
-          
-        </div>
+        <Link to='/personal' className={styles.userInfo}>
+            {image}
+        </Link>
         <SlMenu  onClick={handleButton} className={styles.btnMenu}/>
 
 
