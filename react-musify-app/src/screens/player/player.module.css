@@ -3,4 +3,12 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+.widgets {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: space-between;
 }

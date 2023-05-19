@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styles from './recomendation.module.css';
 import APIKit from '../../spotify';
-import Song from '../../screens/favorites/song';
 
-
-export default function Recomendations() {
+export default function Recomendations({setCurrentIndex}) {
 
   const [tracks, setTracks] = useState(null);
 
@@ -17,9 +15,21 @@ export default function Recomendations() {
 
 
 
-  return (
-    <div className={styles.mainContainer}>
-      Recomendations
-    </div>
-  )
+return (
+  <div className={styles.mainContainer}>
+      <h1 className={styles.title}>Recomendations</h1>
+      <h2>For you:</h2>
+      <div className={styles.queueList}>
+        {tracks?.map((track, index) => (
+          <div
+            key={index + "key"}
+            className={styles.queueItem}
+          >
+            <p className={styles.trackName}>{(track?.name ? track?.name : track?.track?.name)}</p>
+            <p>0:30</p>
+          </div>
+        ))}
+      </div>
+  </div>
+)
 }
