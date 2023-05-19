@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './player.module.css';
 import { useLocation } from "react-router-dom";
 import APIKit from "../../spotify";
+import Queue from '../../components/queue/queue';
 import AudioPlayer from '../../components/audioPlayer/audioPlayer';
 
 export default function Player() {
@@ -51,6 +52,10 @@ export default function Player() {
           setCurrentIndex={setCurrentIndex}
           image = {image}
         />
+        <div className={styles.widgets}>
+          <Queue tracks={tracks} setCurrentIndex={setCurrentIndex}/>
+        </div>
+
     </div>
   )
 }
