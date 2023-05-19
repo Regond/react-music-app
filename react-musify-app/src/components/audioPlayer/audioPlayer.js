@@ -18,7 +18,8 @@ export default function AudioPlayer({
 
     let artists = [];
     let type, name;
-
+    const albumImage = (image != null ? image : currentTrack?.album?.images[0].url);
+    
     if(total[currentIndex]?.preview_url) {
       audioSrc = total[currentIndex]?.preview_url;
       audioRef = useRef(new Audio(total[0]?.preview_url));
@@ -115,28 +116,31 @@ export default function AudioPlayer({
       total[currentIndex]?.artists.forEach((artist) => {
         artists.push(artist.name);
       })
+      name = (total[currentIndex].name)
+      type = (total[currentIndex].type)
     }
     else {
       currentTrack?.album?.artists.forEach((artist) => {
         artists.push(artist.name);
       });
+      name = currentTrack?.name;
+      type = currentTrack?.type;
     }
 
-    console.log(total[currentIndex]);
   return  (
     <div className={styles.wrapper}>
         <div className={styles.mainContainer}>
         <div className={styles.songInfo}>
             <img 
                 className={styles.songImage}
-                src={image}
+                src={albumImage}
             />
             <div className={styles.info}>
                 <div className={`${styles.scrollContainer} ${styles.marqueeContainer}`}>
-                    <h1 className={`${styles.songTitle} ${styles.marquee}`}>{currentTrack?.name} - {artists.join(" | ")}</h1>
+                    <h1 className={`${styles.songTitle} ${styles.marquee}`}>{name} - {artists.join(" | ")}</h1>
                 </div>
                 <h2 className={styles.duration}><AiOutlineClockCircle /> Duration: <span>0:{addZero(Math.round(trackProgress))}</span>/ 0:30</h2>
-                <div className={styles.type}>{currentTrack?.type}</div>
+                <div className={styles.type}>{type}</div>
                 <div className={styles.progressBar}>
                     <div className={styles.progress} style={{width: currentPercentage + '%', transition: 'width .3s'}}></div>
                 </div>

@@ -9,7 +9,7 @@ export default function Player() {
   const location = useLocation();
   const [tracks, setTracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -21,11 +21,6 @@ export default function Player() {
         setTracks(response.data.items);
         setCurrentTrack(response.data?.items[0]?.track);
       });
-      APIKit
-      .get("playlists/" + location.state?.id)
-      .then(response => {
-        setImage(response.data.images[0].url);
-      })
     }
     else {
       APIKit
