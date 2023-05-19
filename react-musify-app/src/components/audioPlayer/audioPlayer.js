@@ -8,14 +8,27 @@ export default function AudioPlayer({
     currentIndex,
     setCurrentIndex,
     total,
+    image,
   }) {
 
+    let audioSrc;
+    let audioRef;
     const [isPlaying, setIsPlaying] = useState(false);
     const [trackProgress, setTrackProgress] = useState(0);
 
-    let audioSrc = total[currentIndex]?.track.preview_url;
+    let artists = [];
+    let type, name;
+
+    if(total[currentIndex]?.preview_url) {
+      audioSrc = total[currentIndex]?.preview_url;
+      audioRef = useRef(new Audio(total[0]?.preview_url));
+    }
+    else {
+      audioSrc = total[currentIndex]?.track.preview_url;
+      audioRef = useRef(new Audio(total[0]?.track.preview_url));
+    }
+
     const isReady = useRef(false);
-    const audioRef = useRef(new Audio(total[0]?.track.preview_url));
     const intervalRef = useRef();
     const { duration } = audioRef.current;
 
@@ -33,7 +46,6 @@ export default function AudioPlayer({
     };
 
     useEffect(() => {
-      console.log(currentPercentage);
       if (audioRef.current.src) {
         if (isPlaying) {
           audioRef.current.play().then(() => {
@@ -99,18 +111,25 @@ export default function AudioPlayer({
       return n > 9 ? "" + n : "0" + n;
     };
 
-    const artists = [];
-    currentTrack?.album?.artists.forEach((artist) => {
-      artists.push(artist.name);
-    });
+    if(total[currentIndex]?.artists) {
+      total[currentIndex]?.artists.forEach((artist) => {
+        artists.push(artist.name);
+      })
+    }
+    else {
+      currentTrack?.album?.artists.forEach((artist) => {
+        artists.push(artist.name);
+      });
+    }
 
+    console.log(total[currentIndex]);
   return  (
     <div className={styles.wrapper}>
         <div className={styles.mainContainer}>
         <div className={styles.songInfo}>
             <img 
                 className={styles.songImage}
-                src={currentTrack?.album?.images[0]?.url}
+                src={image}
             />
             <div className={styles.info}>
                 <div className={`${styles.scrollContainer} ${styles.marqueeContainer}`}>
