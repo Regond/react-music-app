@@ -13,6 +13,7 @@ export default function AudioPlayer({
 
     let audioSrc;
     let audioRef;
+    let id;
     const [isPlaying, setIsPlaying] = useState(false);
     const [trackProgress, setTrackProgress] = useState(0);
 
@@ -23,12 +24,13 @@ export default function AudioPlayer({
     if(total[currentIndex]?.preview_url) {
       audioSrc = total[currentIndex]?.preview_url;
       audioRef = useRef(new Audio(total[0]?.preview_url));
+      id = (total[currentIndex]?.id)
     }
     else {
       audioSrc = total[currentIndex]?.track.preview_url;
       audioRef = useRef(new Audio(total[0]?.track.preview_url));
+      id = ((total[currentIndex])?.track?.id);
     }
-
     const isReady = useRef(false);
     const intervalRef = useRef();
     const { duration } = audioRef.current;

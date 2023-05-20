@@ -11,7 +11,7 @@ export default function Trending() {
   const [playlists, setPlaylists] = useState(null);
 
   useEffect(() => {
-    APIKit.get('browse/featured-playlists?limit=5').then(function(response) {
+    APIKit.get('browse/featured-playlists?limit=15').then(function(response) {
       setPlaylists(response.data.playlists.items);
       console.log(response.data.playlists.items);
   })

@@ -38,3 +38,16 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .type  {
+    cursor: pointer;
+    height: 30px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: #DEDFE4;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
