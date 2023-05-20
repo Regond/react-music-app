@@ -3,12 +3,14 @@ import styles from "./controls.module.css";
 import { IconContext } from "react-icons";
 import { IoPlayBackSharp, IoPlayForwardSharp, IoPlaySharp } from "react-icons/io5";
 import { IoMdPause } from "react-icons/io";
+import Like from '../../like/like';
 
 export default function Controls({
     isPlaying,
     setIsPlaying,
     handleNext,
     handlePrev,
+    
   }) {
   return (
     <IconContext.Provider value={{ size: "50px", color: "black" }}>
@@ -25,7 +27,6 @@ export default function Controls({
             <div className={styles.action} onClick={handleNext}>
                 <IoPlayForwardSharp />
             </div>
-
         </div>
     </IconContext.Provider>
 

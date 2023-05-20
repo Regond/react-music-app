@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styles from './recomendation.module.css';
 import APIKit from '../../spotify';
 
-export default function Recomendations({setCurrentIndex}) {
+export default function Recomendations() {
 
   const [tracks, setTracks] = useState(null);
 

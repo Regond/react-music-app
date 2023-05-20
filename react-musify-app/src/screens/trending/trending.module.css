@@ -7,7 +7,6 @@
 
 .features {
     width: 100%;
-    background-color: black;
     display: flex;
     padding: 15px;
     flex-direction: column;
@@ -20,6 +19,7 @@
 
 .playlists {
     display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
     gap: 20px;
     justify-content: center;

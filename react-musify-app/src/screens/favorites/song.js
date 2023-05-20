@@ -44,7 +44,7 @@ export default function Song(track, key) {
               <h3 className={styles.songArtist}>{artists?.join(', ')}</h3>
           </div>
           <p className={styles.songDuration}>{millisToMinutesAndSeconds(track.track.duration_ms)}</p>
-          <Like track = {track}/>
+          <Like id = {track.track.id}/>
           <IconContext.Provider  value={{ size: "70px", color: "#24252A" }}>
               <AiFillPlayCircle className={styles.play}/>
           </IconContext.Provider>

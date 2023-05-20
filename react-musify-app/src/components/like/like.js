@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import APIKit from '../../spotify';
-export default function Like(track) {
+export default function Like({id}) {
 
 const [isLiked, setIsLiked] = useState();
 
 useEffect(() => {
-    APIKit.get(`me/tracks/contains?ids=${track.track.track.id}`)
+    APIKit.get(`me/tracks/contains?ids=${id}`)
     .then(function(response) {
       setIsLiked(response.data[0]);
   })
@@ -14,17 +14,15 @@ useEffect(() => {
 
 
 function handleAddToFavoirtes() {
-    APIKit.put(`/me/tracks?ids=${track.track.track.id}`)
+    APIKit.put(`/me/tracks?ids=${id}`)
     .then(function(response) {
-        console.log(response);
         setIsLiked(!isLiked);
     })
 }
 
 function handleDeleteFromFavoirtes() {
-    APIKit.delete(`/me/tracks?ids=${track.track.track.id}`)
+    APIKit.delete(`/me/tracks?ids=${id}`)
     .then(function(response) {
-        console.log(response);
         setIsLiked(!isLiked);
     })
 }

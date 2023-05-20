@@ -16,6 +16,7 @@ export default function Player() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [artist, setArtist] = useState();
 
+  if(location.state) {
   useEffect(() => {
     if(location.state.id) {
       APIKit
@@ -46,8 +47,9 @@ export default function Player() {
   useEffect(() => {
     setCurrentTrack(tracks[currentIndex]?.track);
   }, [currentIndex, tracks]);
-
+  }
   return (
+    location.state ? 
     <div className={styles.mainContainer}>
         <AudioPlayer 
           currentTrack={currentTrack}
@@ -63,5 +65,6 @@ export default function Player() {
         </div>
 
     </div>
+    : <h1>Choose some song!</h1>
   )
 }

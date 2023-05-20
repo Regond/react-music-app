@@ -7,6 +7,7 @@ import Trending from '../trending/trending';
 import Player from '../player/player';
 import Sidebar from '../../components/sidebar/sidebar';
 import Login from '../auth/login';
+import Personal from '../personal/personal';
 import { setClientToken } from '../../spotify';
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
                 <Route path="/trending" element={<Trending />} />
                 <Route path="/favorites" element={<Favorites />} />
                 <Route path="/player" element={<Player />} />
+                <Route path="/personal" element={<Personal />} />
             </Routes>
         </Router>
     </div>
